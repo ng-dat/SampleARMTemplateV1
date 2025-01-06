@@ -9,16 +9,18 @@
           "description": "Name of the virtual machine."
         }
       },
-      "adminUsername": {
+      "adUsername": {
         "type": "string",
+        "minLength": "1",
         "metadata": {
-          "description": "Administrator username for the virtual machine."
+          "description": "Administrator username for the virtual machine. The min length is 1."
         }
       },
-      "adminPassword": {
+      "adPassword": {
         "type": "securestring",
+        "minLength": "1",
         "metadata": {
-          "description": "Administrator password for the virtual machine."
+          "description": "Administrator password for the virtual machine. The min length is 1."
         }
       },
       "vmSize": {
@@ -44,7 +46,7 @@
     "resources": [
       {
         "type": "Microsoft.Network/virtualNetworks",
-        "apiVersion": "2021-05-01",
+        "apiVersion": "2025-01-05",
         "name": "[concat(parameters('vmName'), '-vnet')]",
         "location": "[resourceGroup().location]",
         "properties": {
